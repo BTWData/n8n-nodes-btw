@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-btw",
+  "version": "0.1.3",
+  "description": "Node do BTW Intelligence Platform para o n8n: WhatsApp e Inbox do painel, prontos para agentes de IA.",
+  "license": "MIT",
+  "homepage": "https://platform.btwdata.tech",
+  "author": {
+    "name": "BTW Data"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "btw",
+    "whatsapp",
+    "inbox",
+    "crm"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/BtwApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Btw/Btw.node.js"
+    ]
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "gulp": "^5.0.0",
+    "n8n-workflow": "^1.60.0",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
